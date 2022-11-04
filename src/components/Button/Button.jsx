@@ -25,3 +25,5 @@ Button.propTypes = {
 };
 
 export default Button;
+
+// Feito com a ajuda do Josiel
