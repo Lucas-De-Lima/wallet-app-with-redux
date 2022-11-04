@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchCurrencies } from '../../redux/actions/walletActions';
+import { fetchCurrencies, saveExpenses } from '../../redux/actions/walletActions';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
 
 class WalletForm extends Component {
   state = {
-    value: 0,
+    value: '',
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
     tag: 'Alimentação',
+    buttonDisable: true,
   };
 
   componentDidMount() {
@@ -24,8 +26,36 @@ class WalletForm extends Component {
     }));
   };
 
-  render() {
+  fetchExchange = async () => {
+    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const data = await response.json();
+    return data;
+  };
+
+  handleClick = async () => {
+    const { dispatch, currencies, expenses } = this.props;
     const { value, description, currency, method, tag } = this.state;
+    const expense = {
+      id: expenses.length === 0 ? 0 : expenses[expenses.length - 1].id + 1,
+      value,
+      description,
+      currency,
+      method,
+      tag,
+      exchangeRates: await this.fetchExchange(),
+    };
+    dispatch(saveExpenses(expense));
+    this.setState({
+      value: '',
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
+    });
+  };
+
+  render() {
+    const { value, description, currency, method, tag, buttonDisable } = this.state;
     const { currencies } = this.props;
     return (
       <div>
@@ -76,13 +106,21 @@ class WalletForm extends Component {
           <option value="Transporte">Transporte</option>
           <option value="Saúde">Saúde</option>
         </select>
+        <Button
+          data-testid=""
+          handleClick={ this.handleClick }
+          buttonDisable={ false }
+        >
+          Adicionar despesa
+        </Button>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ wallet: { currencies } }) => ({
+const mapStateToProps = ({ wallet: { currencies, expenses } }) => ({
   currencies,
+  expenses,
 });
 
 WalletForm.propTypes = {
