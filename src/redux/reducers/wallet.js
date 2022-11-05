@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   idToEdit: 0,
 };
 
-export const wallet = (state = INITIAL_STATE, { type, payload }) => {
+const wallet = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
   case GET_CURRENCIES:
     return {

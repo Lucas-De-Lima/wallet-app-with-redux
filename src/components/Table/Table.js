@@ -7,7 +7,9 @@ class Table extends Component {
         <table>
           <thead>
             <tr>
-              <th />
+              <th>
+                aaa
+              </th>
             </tr>
           </thead>
           <tbody>

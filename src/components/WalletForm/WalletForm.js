@@ -12,7 +12,6 @@ class WalletForm extends Component {
     currency: 'USD',
     method: 'Dinheiro',
     tag: 'Alimentação',
-    buttonDisable: true,
   };
 
   componentDidMount() {
@@ -33,7 +32,7 @@ class WalletForm extends Component {
   };
 
   handleClick = async () => {
-    const { dispatch, currencies, expenses } = this.props;
+    const { dispatch, expenses } = this.props;
     const { value, description, currency, method, tag } = this.state;
     const expense = {
       id: expenses.length === 0 ? 0 : expenses[expenses.length - 1].id + 1,
@@ -55,7 +54,7 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { value, description, currency, method, tag, buttonDisable } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     const { currencies } = this.props;
     return (
       <div>
@@ -125,6 +124,7 @@ const mapStateToProps = ({ wallet: { currencies, expenses } }) => ({
 
 WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  expenses: PropTypes.string.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
