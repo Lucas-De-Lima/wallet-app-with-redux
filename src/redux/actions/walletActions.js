@@ -1,6 +1,7 @@
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export const getCurrencies = (currencies) => ({
   type: GET_CURRENCIES,
@@ -9,6 +10,11 @@ export const getCurrencies = (currencies) => ({
 
 export const saveExpenses = (expenses) => ({
   type: SAVE_EXPENSES,
+  payload: expenses,
+});
+
+export const deleteExpenses = (expenses) => ({
+  type: DELETE_EXPENSES,
   payload: expenses,
 });
 
