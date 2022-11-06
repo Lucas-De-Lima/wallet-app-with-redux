@@ -4,17 +4,6 @@ import { connect } from 'react-redux';
 import Tr from '../Tr/Tr';
 
 class Table extends Component {
-  // handleClick = ({ target }) => {
-  //   // const { dispatch, expenses } = this.props;
-  //   const buttonTarget = target.innerText;
-  //   console.log(buttonTarget);
-  //   if (buttonTarget.innerText === 'Excluir') {
-  //     console.log('botão de excluir');
-  //   } if (buttonTarget.innerText === 'Editar') {
-  //     console.log('botão de editar');
-  //   }
-  // };
-
   render() {
     const { expenses } = this.props;
     return (
@@ -36,32 +25,6 @@ class Table extends Component {
           <tbody>
             {/* map nas expenses, criar novo componente que retorna um tr com os dados da expense */}
             { expenses.map((expense) => (<Tr key={ expense.id } expense={ expense } />)) }
-            {/* <button
-              type="button"
-              onClick={ this.handleClick }
-            >
-              Editar
-
-            </button>
-            <button
-              onClick={ this.handleClick }
-              type="button"
-              data-testid="delete-btn"
-            >
-              Excluir
-
-            </button> */}
-            {/* <Button
-              data-testid="delete-btn"
-              type="button"
-              onClick={ this.handleClick }
-            >
-              Excluir
-            </Button>
-
-            <Button>
-              Editar
-            </Button> */}
           </tbody>
         </table>
       </div>

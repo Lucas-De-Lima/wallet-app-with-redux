@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteExpenses } from '../../redux/actions/walletActions';
 
 class Tr extends Component {
+  hendleDelete = () => {
+    const { dispatch, expense } = this.props;
+    dispatch(deleteExpenses(expense));
+  };
+
+  // hendleEdit = () => {
+  //   const { dispatch } = this.props;
+  // };
+
   render() {
     const { expense:
          { description, method, tag, value, currency, exchangeRates } } = this.props;
@@ -16,6 +27,23 @@ class Tr extends Component {
         <td>{parseFloat(ask).toFixed(2)}</td>
         <td>{parseFloat(value * ask).toFixed(2)}</td>
         <td>Real</td>
+        <td>
+          <button
+            type="button"
+            onClick={ this.hendleEdit }
+          >
+            Editar
+
+          </button>
+          <button
+            onClick={ this.hendleDelete }
+            type="button"
+            data-testid="delete-btn"
+          >
+            Excluir
+
+          </button>
+        </td>
       </tr>
     );
   }
@@ -30,6 +58,7 @@ Tr.propTypes = {
     currency: PropTypes.string,
     exchangeRates: PropTypes.string,
   }).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Tr;
+export default connect()(Tr);

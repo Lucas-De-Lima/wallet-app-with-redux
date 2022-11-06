@@ -13,9 +13,9 @@ export const saveExpenses = (expenses) => ({
   payload: expenses,
 });
 
-export const deleteExpenses = (expenses) => ({
+export const deleteExpenses = (expense) => ({
   type: DELETE_EXPENSES,
-  payload: expenses,
+  payload: expense,
 });
 
 export function fetchCurrencies() {
