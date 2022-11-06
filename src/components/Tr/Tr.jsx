@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteExpenses } from '../../redux/actions/walletActions';
+import { deleteExpenses, editExpenses } from '../../redux/actions/walletActions';
 
 class Tr extends Component {
   hendleDelete = () => {
@@ -9,9 +9,10 @@ class Tr extends Component {
     dispatch(deleteExpenses(expense));
   };
 
-  // hendleEdit = () => {
-  //   const { dispatch } = this.props;
-  // };
+  hendleEdit = () => {
+    const { dispatch, expense } = this.props;
+    dispatch(editExpenses(expense.id));
+  };
 
   render() {
     const { expense:
@@ -31,6 +32,7 @@ class Tr extends Component {
           <button
             type="button"
             onClick={ this.hendleEdit }
+            data-testid="edit-btn"
           >
             Editar
 
@@ -57,6 +59,7 @@ Tr.propTypes = {
     value: PropTypes.string,
     currency: PropTypes.string,
     exchangeRates: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
