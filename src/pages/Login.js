@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import { saveEmail } from '../redux/actions/userActions';
+import './Login.css';
+import logo from './logo.svg';
+import background from './background.svg';
 
 class Login extends React.Component {
   state = {
@@ -49,7 +52,9 @@ class Login extends React.Component {
     const { email, senha, buttonDisable } = this.state;
     return (
       <div className="login-conteiner">
+        <img src={ background } alt="foto-fundo" />
         <div className="login-card">
+          <img src={ logo } alt="login-logo" />
           <Input
             type="text"
             value={ email }

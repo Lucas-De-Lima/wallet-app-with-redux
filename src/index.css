@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-container {  
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-rows: 0.9fr 1.2fr 0.9fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.login-page {
+   grid-area: 1 / 1 / 4 / 4; 
+  }
+
+.login-card {
+   grid-area: 2 / 2 / 3 / 3; 
+  }

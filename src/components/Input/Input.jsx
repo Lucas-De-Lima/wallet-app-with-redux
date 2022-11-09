@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Input.css';
 
 class Input extends Component {
   render() {
     const { type, testId, handleInput, children, name, value } = this.props;
     return (
       <input
+        className="generic-input"
         type={ type }
         data-testid={ testId }
         placeholder={ children }

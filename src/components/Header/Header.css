@@ -1,0 +1,16 @@
+.wallet-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-email {
+    align-self: flex-end;
+}
+
+.total-expenses {
+    display: flex;
+}
+
+/* .BRL {
+    align-self: flex-start;
+} */

@@ -1,0 +1,10 @@
+.generic-bt {
+    padding: 10px;
+    box-sizing: border-box;
+
+    color: #FFFFFF;
+
+    background: #003BE5;
+    border: 1px solid #003BE5;
+    border-radius: 5px;
+}
