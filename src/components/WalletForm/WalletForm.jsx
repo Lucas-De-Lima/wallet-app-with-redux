@@ -91,7 +91,9 @@ class WalletForm extends Component {
           name="value"
           testId="value-input"
           handleInput={ this.handleInput }
-        />
+        >
+          Valor
+        </Input>
         <Input
           type="text"
           value={ description }

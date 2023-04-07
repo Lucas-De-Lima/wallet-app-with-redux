@@ -12,7 +12,7 @@ class Wallet extends React.Component {
     const { editor } = this.props;
     return (
       <div className="wallet-conteiner">
-        <img src={ background } alt="bg-img" />
+        <img className="bg-img" src={ background } alt="bg-img" />
 
         <Table />
 
