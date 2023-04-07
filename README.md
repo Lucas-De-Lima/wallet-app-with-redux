@@ -1,13 +1,8 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Wallet APP
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Este projeto consiste em um aplicativo de carteira, onde o usuário pode adicionar despesas em diversas moedas e ver a soma total em real. O projeto foi desenvolvido utilizando React e Redux.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Funcionalidades
+
+Página de Login: o usuário deve se identificar com email e senha para acessar o aplicativo.
+Página da Carteira: onde é possível gerenciar as despesas, adicionar e excluir despesas e ver a soma total em real.
