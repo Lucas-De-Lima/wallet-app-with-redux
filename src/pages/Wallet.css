@@ -8,10 +8,10 @@
     height: 100vh;
     width: 100vw;
 
-    background-color: #00ff95;
+    background-color: #008d36;
 }
 
-.wallet-conteiner img {
+.wallet-conteiner .bg-img {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -24,7 +24,7 @@
     justify-content: space-around;
     position: absolute;
     
-    background-color: rgb(255, 255, 255);
+    background-color:rgb(17, 17, 51);
     border-radius: 10px;
 
 }
@@ -33,5 +33,27 @@
     align-self: center;
 
     padding: 50px;
-    background-color: rgb(191, 191, 192);
+    background-color: rgb(73, 73, 126);
+    border-radius: 10px;
+
+}
+
+tr {
+    color: #03ce79;
+}
+
+th {
+    color: rgb(155, 77, 228);
+}
+
+p {
+    color: #00ff95;
+}
+
+input { 
+    background-color: aquamarine;
+}
+
+select { 
+    background-color: aquamarine;
 }

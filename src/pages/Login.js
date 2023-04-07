@@ -5,7 +5,7 @@ import Input from '../components/Input/Input';
 import Button from '../components/Button/Button';
 import { saveEmail } from '../redux/actions/userActions';
 import './Login.css';
-import logo from './logo.svg';
+import logo from './logo.png';
 import background from './background.svg';
 
 class Login extends React.Component {
